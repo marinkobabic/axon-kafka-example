@@ -1,0 +1,16 @@
+axon:
+  eventhandling:
+    processors:
+      com.mykafka.consumer:
+        source: kafkaMessageSource
+  kafka:
+    clientid: myconsumer
+    defaulttopic: mydefaulttopic
+    consumer:
+      group-id: boot
+      bootstrapservers:
+               - 127.0.0.1:9092
+
+logging:
+  level:
+    ROOT: DEBUG

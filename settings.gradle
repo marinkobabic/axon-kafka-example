@@ -1,0 +1,6 @@
+rootProject.name = 'axon'
+
+include "consumer"
+include "producer"
+include 'pruducer-events'
+

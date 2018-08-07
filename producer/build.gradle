@@ -1,0 +1,34 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.mykafka'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+}
+
+
+dependencies {
+	compile group: 'org.axonframework', name: 'axon-kafka', version: '3.3.2'
+  compile group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '3.3.3'
+  compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.kafka:spring-kafka')
+	compile project(":pruducer-events")
+	testCompile('org.springframework.boot:spring-boot-starter-test')
+}
