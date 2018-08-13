@@ -1,8 +1,9 @@
 axon:
   eventhandling:
     processors:
-      com.mykafka.consumer:
+      "[com.mykafka.consumer]":
         source: kafkaMessageSource
+        mode: TRACKING
   kafka:
     clientid: myconsumer
     defaulttopic: mydefaulttopic
