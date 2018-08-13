@@ -1,11 +1,9 @@
 /*
  * © 2018 CREALOGIX. All rights reserved.
  */
-package com.mykafka.consumer;
+package com.mykafka.producer;
 
 import com.mykafka.producer.events.MyEvent;
-
-import java.util.concurrent.CountDownLatch;
 
 import org.axonframework.eventhandling.EventHandler;
 import org.slf4j.Logger;

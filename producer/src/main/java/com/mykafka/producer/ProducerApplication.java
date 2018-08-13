@@ -20,13 +20,13 @@ public class ProducerApplication implements CommandLineRunner {
 	}
 
 	@Autowired
-	Sender sender;
+	private Sender sender;
 
 	private CountDownLatch latch = new CountDownLatch(1);
 
 	@Override
 	public void run(String... args) throws Exception {
-		sender.send("boot.t",new MyEvent("Hi there"));
-		latch.await(60, TimeUnit.SECONDS);
+		sender.send(new MyEvent("Hi there"));
+		latch.await(15, TimeUnit.SECONDS);
 	}
 }

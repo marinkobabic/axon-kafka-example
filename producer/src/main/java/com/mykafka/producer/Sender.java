@@ -9,18 +9,17 @@ import org.axonframework.eventhandling.GenericEventMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Sender {
+class Sender {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Sender.class);
 
   @Autowired
   private EventBus eventBus;
 
-  public <T> void send(String topic, T event) {
+  <T> void send(T event) {
     LOGGER.info("publishing event {}", event);
     EventMessage<T> eventMessage = GenericEventMessage.asEventMessage(event);
 
