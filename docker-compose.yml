@@ -14,15 +14,4 @@ services:
       KAFKA_ZOOKEEPER_CONNECT: "zookeeper:2181"
       KAFKA_ADVERTISED_HOST_NAME: localhost
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
-   producer:
-     build: .
-     depends_on:
-       - zookeeper
-       - kafka
-   consumer:
-     build: .
-     depends_on:
-       - zookeeper
-       - kafka
-     
-   
+
