@@ -1,13 +1,16 @@
 /*
  * © 2018 CREALOGIX. All rights reserved.
  */
-package com.mykafka.producer.events;
+package com.mykafka.consumer.events;
 
 import java.io.Serializable;
 
 public class MyEvent implements Serializable {
 
   private String greeting;
+
+  private MyEvent() {
+  }
 
   public MyEvent(String greeting){
 

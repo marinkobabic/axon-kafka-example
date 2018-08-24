@@ -1,9 +1,9 @@
 /*
  * © 2018 CREALOGIX. All rights reserved.
  */
-package com.mykafka.producer;
+package com.mykafka.consumer;
 
-import com.mykafka.producer.events.MyEvent;
+import com.mykafka.consumer.events.MyEvent;
 
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
@@ -26,7 +26,7 @@ public class MyEventEventHandler {
 
   @EventHandler
   public void handleMyEvent(MyEvent myEvent){
-    LOGGER.debug("got the event {}", myEvent);
+    LOGGER.info("got the event {}", myEvent);
   }
 
 }

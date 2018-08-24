@@ -1,4 +1,4 @@
-package com.mykafka.producer;
+package com.mykafka.consumer;
 
 import java.util.concurrent.CountDownLatch;
 

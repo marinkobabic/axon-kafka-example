@@ -1,7 +1,7 @@
 /*
  * © 2018 CREALOGIX. All rights reserved.
  */
-package com.mykafka.producer;
+package com.mykafka.consumer;
 
 import org.axonframework.boot.autoconfig.AxonAutoConfiguration;
 import org.axonframework.kafka.eventhandling.DefaultKafkaMessageConverter;

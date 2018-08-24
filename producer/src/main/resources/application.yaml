@@ -1,13 +1,15 @@
 axon:
+  serializer:
+    general: jackson
   kafka:
     clientid: myproducer
     defaulttopic: mydefaulttopic
     producer:
       retries: 5
       bootstrapservers:
-         - 127.0.0.1:9092
+         - kafka:9092
       transaction-id-prefix: clxtrx
 
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: INFO

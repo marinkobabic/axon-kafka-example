@@ -1,0 +1,29 @@
+buildscript {
+  ext {
+    springBootVersion = '2.0.4.RELEASE'
+  }
+  repositories {
+    maven {
+      url "https://plugins.gradle.org/m2/"
+    }
+    mavenCentral()
+  }
+  dependencies {
+    classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    classpath('gradle.plugin.com.palantir.gradle.docker:gradle-docker:0.13.0')
+  }
+}
+
+subprojects {
+  apply plugin: 'java'
+  apply plugin: 'eclipse'
+  apply plugin: 'io.spring.dependency-management'
+
+  group = 'marinko'
+  version = '0.0.1-SNAPSHOT'
+  sourceCompatibility = 1.8
+
+  repositories {
+    mavenCentral()
+  }
+}

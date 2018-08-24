@@ -38,5 +38,6 @@ For reference see the Spring Boot Autoconfiguraton https://docs.axonframework.or
 ###Docker
 If you don't have a kafka environment running on your machine, you can use the docker-compose.yaml here. All you need to do is to navigate to this directore and execute the command
 ```
+gradlew build docker
 docker-compose up
 ```

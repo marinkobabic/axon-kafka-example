@@ -1,4 +1,6 @@
 axon:
+  serializer:
+    general: jackson
   eventhandling:
     processors:
       "[MyProcessor]":
@@ -10,8 +12,8 @@ axon:
     consumer:
       group-id: boot
       bootstrapservers:
-               - 127.0.0.1:9092
+        - kafka:9092
 
 logging:
   level:
-    ROOT: DEBUG
+    ROOT: INFO
