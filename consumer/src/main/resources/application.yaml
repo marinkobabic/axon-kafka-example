@@ -6,6 +6,8 @@ axon:
       "[MyProcessor]":
         source: kafkaMessageSource
         mode: TRACKING
+        threadCount: 1
+        batchSize: 1
   kafka:
     clientid: myconsumer
     defaulttopic: mydefaulttopic

@@ -16,6 +16,7 @@ import org.springframework.context.annotation.Configuration;
 /*
 This configuration is only needed because of the issue
 https://github.com/AxonFramework/AxonFramework/issues/710
+https://github.com/AxonFramework/ReferenceGuide/issues/82
  */
 @Configuration
 @AutoConfigureAfter(AxonAutoConfiguration.class)

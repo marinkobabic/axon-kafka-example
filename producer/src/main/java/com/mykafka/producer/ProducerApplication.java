@@ -28,14 +28,15 @@ public class ProducerApplication implements CommandLineRunner {
 
   @Override
   public void run(String... args) throws Exception {
+    TimeUnit.SECONDS.sleep(5);
+
     LOGGER.info("Start sending");
     final long processId = 1234;
-    for (int i = 0; i < 20; i++) {
+    sender.send(new MySagaStartEvent(processId));
+
+    for (int i = 1; i <= 20; i++) {
       TimeUnit.SECONDS.sleep(5);
       sender.send(new MyEvent(String.format("Hi there %d", i)));
-      if (i == 5) {
-        sender.send(new MySagaStartEvent(processId));
-      }
     }
     sender.send(new MySagaEndEvent(processId));
     LOGGER.info("Send completed");

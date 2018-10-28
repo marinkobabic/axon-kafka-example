@@ -15,8 +15,8 @@ import org.axonframework.spring.stereotype.Saga;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-@Saga(sagaStore = "mySagaStore", configurationBean = "mySagaConfiguration")
-@ProcessingGroup("MyProcessor")
+@Saga
+@ProcessingGroup("MySagaProcessor")
 public class MySaga {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(MySaga.class);

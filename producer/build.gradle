@@ -2,16 +2,15 @@ apply plugin: 'com.palantir.docker'
 apply plugin: 'org.springframework.boot'
 
 dependencies {
-	compile group: 'org.axonframework', name: 'axon-kafka', version: '3.3.2'
-  compile group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '3.3.3'
-  compile('org.springframework.boot:spring-boot-starter-actuator')
-	compile('org.springframework.kafka:spring-kafka')
-	compile project(":pruducer-events")
-	testCompile('org.springframework.boot:spring-boot-starter-test')
+	implementation group: 'org.axonframework', name: 'axon-kafka', version: '3.4'
+	implementation group: 'org.axonframework', name: 'axon-spring-boot-starter', version: '3.3.3'
+	implementation('org.springframework.boot:spring-boot-starter-actuator')
+	implementation('org.springframework.kafka:spring-kafka')
+	implementation project(":pruducer-events")
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 docker {
-	dependsOn build
   println(bootJar.baseName)
 	name "${project.group}/${bootJar.baseName}"
 	files bootJar.archivePath
